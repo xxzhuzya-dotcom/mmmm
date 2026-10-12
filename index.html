@@ -1,1 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Aurel | Handcrafted Luxury Furniture</title>
+<meta name="description" content="Maison Aurel designs and handcrafts exclusive furniture in solid wood, stone and natural leather.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f6f1e8;
+  --offwhite:#fbf9f4;
+  --beige:#e9dfcf;
+  --charcoal:#222120;
+  --muted:#6b645b;
+  --gold:#a98550;
+  --gold-soft:#c9a875;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.75;color:var(--charcoal);background:var(--offwhite);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.wrap{width:min(1200px,92%);margin-inline:auto}
 
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .5s var(--ease),box-shadow .5s var(--ease),padding .5s var(--ease);padding:26px 0;color:#fff}
+header.solid{background:rgba(251,249,244,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--charcoal);padding:16px 0;box-shadow:0 1px 0 rgba(169,133,80,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--serif);font-size:1.45rem;letter-spacing:.06em}
+.nav ul{display:flex;gap:44px}
+.nav ul a{font-size:.85rem;letter-spacing:.14em;position:relative;padding:4px 0}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;background:var(--gold-soft);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav ul a:hover::after{transform:scaleX(1)}
+.menu-btn{display:none;background:none;border:0;color:inherit;font:inherit;font-size:.85rem;letter-spacing:.14em;cursor:pointer;padding:8px 0}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;background:#1b1a19;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,18,16,.65) 0%,rgba(20,18,16,.35) 45%,rgba(20,18,16,.8) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-inner{max-width:760px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:28px}
+.hero p{font-size:1.1rem;max-width:520px;color:rgba(255,255,255,.85);margin-bottom:44px}
+.btn{display:inline-block;padding:17px 44px;border:1px solid var(--gold-soft);color:#fff;font-size:.85rem;letter-spacing:.16em;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.hero-inner>*{opacity:0;transform:translateY(22px);animation:rise 1.2s var(--ease) forwards}
+.hero-inner>*:nth-child(2){animation-delay:.25s}
+.hero-inner>*:nth-child(3){animation-delay:.5s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* Sections */
+section{padding:clamp(80px,11vw,150px) 0}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4vw,3.1rem);line-height:1.2;margin-bottom:28px}
+.rule{width:56px;height:1px;background:var(--gold);margin-bottom:32px}
+
+/* About */
+#about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,120px);align-items:start}
+.about-grid p{color:var(--muted);margin-bottom:22px;max-width:60ch}
+.about-grid p:last-child{margin-bottom:0}
+.values{display:grid;gap:34px;padding-top:6px}
+.values div{border-left:1px solid var(--gold);padding-left:26px}
+.values h3{font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:6px}
+.values p{margin:0;font-size:.95rem}
+
+/* Collection */
+.section-head{max-width:620px;margin-bottom:64px}
+.section-head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 36px}
+.item figure{overflow:hidden;background:var(--beige);aspect-ratio:4/5}
+.item img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .8s var(--ease)}
+.item:hover img{transform:scale(1.06);filter:brightness(.94)}
+.item-info{padding-top:22px;display:grid;grid-template-columns:1fr auto;gap:4px 20px;align-items:baseline}
+.item h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;transition:color .4s var(--ease)}
+.item:hover h3{color:var(--gold)}
+.item .price{font-size:.95rem;color:var(--gold);letter-spacing:.04em;white-space:nowrap}
+.item .desc{grid-column:1/-1;font-size:.93rem;color:var(--muted);max-width:42ch}
+
+/* Contact */
+#contact{background:var(--charcoal);color:var(--cream)}
+#contact h2{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(36px,6vw,90px)}
+.contact-grid p,.contact-grid li{color:rgba(246,241,232,.72);font-size:.95rem}
+.contact-grid h3{font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--gold-soft);margin-bottom:18px}
+.contact-grid li{margin-bottom:8px}
+.contact-grid a{transition:color .3s var(--ease)}
+.contact-grid a:hover{color:var(--gold-soft)}
+.btn-gold{margin-top:30px;border-color:var(--gold-soft)}
+footer{background:var(--charcoal);color:rgba(246,241,232,.5);font-size:.82rem;padding:28px 0;border-top:1px solid rgba(201,168,117,.25)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Responsive */
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .menu-btn{display:block}
+  .nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--offwhite);color:var(--charcoal);padding:8px 4% 20px;box-shadow:0 12px 24px rgba(0,0,0,.08);display:none}
+  .nav ul.open{display:flex}
+  .nav ul a{display:block;padding:14px 0;border-bottom:1px solid var(--beige)}
+  .grid{grid-template-columns:1fr;gap:48px}
+  footer .wrap{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .hero-inner>*{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#home" class="brand">Maison Aurel</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home" style="padding:0">
+    <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="videos/videos1.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <div class="hero-inner">
+        <h1>Furniture made to be lived with for generations.</h1>
+        <p>Solid timber, natural stone and hand-stitched leather, shaped slowly in our atelier and finished by hand.</p>
+        <a href="#collection" class="btn">Explore Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="rule"></div>
+        <h2>Quiet design, built to last.</h2>
+        <p>Maison Aurel began as a small workshop with a simple conviction: a piece of furniture should become better with age. Every design starts with proportion and restraint, and ends with a finish you can feel.</p>
+        <p>We work with a small circle of master joiners and upholsterers. Each piece is made to order, signed by the craftsperson who built it, and delivered with a lifetime care promise.</p>
+      </div>
+      <div class="values">
+        <div>
+          <h3>Honest materials</h3>
+          <p>Responsibly sourced oak, walnut and marble, chosen for grain and character, never veneered over.</p>
+        </div>
+        <div>
+          <h3>Hand-finished</h3>
+          <p>Traditional joinery, oiled surfaces and hand-stitched upholstery, with no shortcuts.</p>
+        </div>
+        <div>
+          <h3>Made to order</h3>
+          <p>Choose your timber, fabric and dimensions. Most pieces are ready in ten to fourteen weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="collection">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="rule"></div>
+        <h2>The Collection</h2>
+        <p>Nine signature pieces for living, dining and rest. Each can be adapted to your space.</p>
+      </div>
+
+      <div class="grid">
+        <article class="item">
+          <figure><img src="images/images1.jpg" alt="Sculpted lounge armchair" loading="lazy"></figure>
+          <div class="item-info"><h3>Aurel Lounge Chair</h3><span class="price">€2,450</span><p class="desc">Curved oak frame with deep, hand-stitched leather seating.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images2.jpg" alt="Upholstered three-seat sofa" loading="lazy"></figure>
+          <div class="item-info"><h3>Verona Sofa</h3><span class="price">€5,890</span><p class="desc">Generous three-seater in soft bouclé with a low, relaxed profile.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images3.jpg" alt="Solid wood dining table" loading="lazy"></figure>
+          <div class="item-info"><h3>Lumen Dining Table</h3><span class="price">€4,200</span><p class="desc">Solid walnut top on a sculpted base, seating eight comfortably.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images4.jpg" alt="Marble top coffee table" loading="lazy"></figure>
+          <div class="item-info"><h3>Selene Coffee Table</h3><span class="price">€1,980</span><p class="desc">Honed marble surface resting on a slim bronze-finished frame.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images5.jpg" alt="Tufted bed with headboard" loading="lazy"></figure>
+          <div class="item-info"><h3>Nocturne Bed</h3><span class="price">€6,400</span><p class="desc">Tall upholstered headboard in linen, with a solid ash base.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images6.jpg" alt="Wooden sideboard cabinet" loading="lazy"></figure>
+          <div class="item-info"><h3>Atelier Sideboard</h3><span class="price">€3,350</span><p class="desc">Fluted oak doors, soft-close hinges and a hidden brass pull.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images7.jpg" alt="Elegant dining chair" loading="lazy"></figure>
+          <div class="item-info"><h3>Cielo Dining Chair</h3><span class="price">€780</span><p class="desc">Curved back, hand-woven seat and joints that need no screws.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images8.jpg" alt="Console table with brass details" loading="lazy"></figure>
+          <div class="item-info"><h3>Orla Console</h3><span class="price">€2,150</span><p class="desc">A slender entryway piece in smoked oak with brushed brass inlay.</p></div>
+        </article>
+        <article class="item">
+          <figure><img src="images/images9.jpg" alt="Modern floor lamp" loading="lazy"></figure>
+          <div class="item-info"><h3>Halo Floor Lamp</h3><span class="price">€1,290</span><p class="desc">Hand-blown opal glass and a patinated bronze stem, softly lit.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="rule"></div>
+        <h2>Visit the atelier</h2>
+        <p>Book a private appointment to see materials in person and discuss a piece made for your home.</p>
+        <a href="mailto:atelier@maisonaurel.com" class="btn btn-gold">Request an appointment</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>12 Rue de l'Atelier, Paris</li>
+          <li><a href="mailto:atelier@maisonaurel.com">atelier@maisonaurel.com</a></li>
+          <li><a href="tel:+33100000000">+33 1 00 00 00 00</a></li>
+          <li>Tuesday to Saturday, 10:00 to 18:00</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow</h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Pinterest</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Maison Aurel. All rights reserved.</span>
+    <span>Handcrafted furniture, made to order.</span>
+  </div>
+</footer>
+
+<script>
+  const header = document.querySelector('header');
+  const btn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('menu');
+  const onScroll = () => header.classList.toggle('solid', window.scrollY > 60);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    if (open) header.classList.add('solid');
+    else onScroll();
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    onScroll();
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
